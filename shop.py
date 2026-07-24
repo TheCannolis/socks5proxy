@@ -481,7 +481,7 @@ async function loadPlans(){
 '<span class="price-period">'+(isFree?'':' USD')+'</span></div>'+
 '<div class="billing-note">'+billing+'</div>'+
 '<ul>'+featuresHtml+'</ul>'+
-'<button class="btn btn-plan '+btnClass+'" onclick="openOrder(\''+id+'\')">'+btnText+'</button>'+
+'<button class="btn btn-plan '+btnClass+'" onclick="openOrder(&#39;'+id+'&#39;)">'+btnText+'</button>'+
 '</div>';
   }
 }
@@ -569,9 +569,9 @@ async function claimFree(email,countries){
 
 function renderPaymentMethods(){
   const el=document.getElementById('payMethods');el.innerHTML='';
-  el.innerHTML+='<div class="pay-method selected" id="pm-wc" onclick="selectPayMethod(\'wc\')">WalletConnect<br><span style="font-size:10px;color:var(--text-muted)">ETH · SOL · USDT</span></div>';
-  el.innerHTML+='<div class="pay-method" id="pm-btc" onclick="selectPayMethod(\'btc\')">Bitcoin<br><span style="font-size:10px;color:var(--text-muted)">₿ BTC</span></div>';
-  el.innerHTML+='<div class="pay-method" id="pm-ltc" onclick="selectPayMethod(\'ltc\')">Litecoin<br><span style="font-size:10px;color:var(--text-muted)">Ł LTC</span></div>';
+  el.innerHTML+='<div class="pay-method selected" id="pm-wc" onclick="selectPayMethod(&#39;wc&#39;)">WalletConnect<br><span style="font-size:10px;color:var(--text-muted)">ETH · SOL · USDT</span></div>';
+  el.innerHTML+='<div class="pay-method" id="pm-btc" onclick="selectPayMethod(&#39;btc&#39;)">Bitcoin<br><span style="font-size:10px;color:var(--text-muted)">₿ BTC</span></div>';
+  el.innerHTML+='<div class="pay-method" id="pm-ltc" onclick="selectPayMethod(&#39;ltc&#39;)">Litecoin<br><span style="font-size:10px;color:var(--text-muted)">Ł LTC</span></div>';
   selectPayMethod('wc');
 }
 
@@ -600,7 +600,7 @@ function renderChainSelector(){
   const el=document.getElementById('chainSelect');el.innerHTML='';
   const wcChains=CHAINS.filter(c=>c.type!=='utxo');
   wcChains.forEach(c=>{
-    el.innerHTML+='<div class="chain-chip" id="ch-'+c.id+'" onclick="selChain(\''+c.id+'\')">'+c.name+'</div>';
+    el.innerHTML+='<div class="chain-chip" id="ch-'+c.id+'" onclick="selChain(&#39;'+c.id+'&#39;)">'+c.name+'</div>';
   });
   if(wcChains.length)selChain(wcChains[0].id);
 }
@@ -612,7 +612,7 @@ function selChain(id){
   const c=CHAINS.find(x=>x.id===id);
   const tl=document.getElementById('tokenChips');tl.innerHTML='';
   c.tokens.forEach(t=>{
-    tl.innerHTML+='<div class="chain-chip" id="tk-'+t.symbol+'" onclick="selToken(\''+t.symbol+'\')">'+t.symbol+'</div>';
+    tl.innerHTML+='<div class="chain-chip" id="tk-'+t.symbol+'" onclick="selToken(&#39;'+t.symbol+'&#39;)">'+t.symbol+'</div>';
   });
   if(c.tokens.length)selToken(c.tokens[0].symbol);
 }
