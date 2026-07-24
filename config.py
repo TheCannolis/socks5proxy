@@ -11,9 +11,9 @@ else:
 WEB_HOST = os.environ.get('SOCKS5_HOST', '127.0.0.1')
 WEB_PORT = int(os.environ.get('SOCKS5_PORT', '8888'))
 SHOP_PORT = int(os.environ.get('SOCKS5_SHOP_PORT', '8889'))
-WEB_SECRET_KEY = os.environ.get('SOCKS5_SECRET_KEY', 'change-me-in-production-please')
-WEB_USERNAME = os.environ.get('SOCKS5_ADMIN_USER', 'admin')
-WEB_PASSWORD = os.environ.get('SOCKS5_ADMIN_PASS', 'admin')
+WEB_SECRET_KEY = os.environ.get('SOCKS5_SECRET_KEY', 'SOCKS5_UPLOAD_KEY=4aef93d2b109c847e3f21a5d6e7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b')
+WEB_USERNAME = os.environ.get('SOCKS5_ADMIN_USER', 'Conleone')
+WEB_PASSWORD = os.environ.get('SOCKS5_ADMIN_PASS', 'FUpayme1312$$$')
 
 SCRAPE_INTERVAL_MINUTES = int(os.environ.get('SOCKS5_INTERVAL', '60'))
 CONCURRENCY = int(os.environ.get('SOCKS5_CONCURRENCY', '300'))
@@ -25,7 +25,7 @@ REMOVE_DEAD_AFTER_FAILS = 3
 OUTPUT_DIR = BASE_DIR / 'proxy_pool'
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-UPLOAD_API_KEY = os.environ.get('SOCKS5_UPLOAD_KEY', 'change-me-upload-key')
+UPLOAD_API_KEY = os.environ.get('SOCKS5_UPLOAD_KEY', 'SOCKS5_UPLOAD_KEY=4aef93d2b109c847e3f21a5d6e7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b')
 
 SOURCES = {
     'proxyscrape_s5': 'https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&timeout=10000&country=all',
